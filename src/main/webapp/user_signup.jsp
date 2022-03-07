@@ -14,7 +14,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
 
-  <!-- Custom styles for this template -->
+
  
     <style>
         
