@@ -1,0 +1,48 @@
+CREATE TABLE `user` (
+  `id` int NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `motivation` varchar(45) NOT NULL,
+  `goal` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `targets` (
+  `target_id` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL,
+  `target_value` float NOT NULL,
+  `week_id` int NOT NULL,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`target_id`),
+  KEY `id_idx` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=677 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `weekly_details` (
+  `week_id` int NOT NULL,
+  `food_price` double NOT NULL,
+  `waste_measurement` double NOT NULL,
+  `id` int NOT NULL,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`week_id`),
+  KEY `id_idx` (`id`),
+  CONSTRAINT `id` FOREIGN KEY (`id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `recommendations` (
+  `rec_id` int NOT NULL AUTO_INCREMENT,
+  `recommendation1` varchar(45) NOT NULL,
+  `recommendation2` varchar(45) NOT NULL,
+  `recommendation3` varchar(45) NOT NULL,
+  `id` int NOT NULL,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`rec_id`),
+  KEY `id_idx` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `plans` (
+  `id` int NOT NULL,
+  `plan_measurement` float NOT NULL,
+  `plan_id` int NOT NULL,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`plan_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

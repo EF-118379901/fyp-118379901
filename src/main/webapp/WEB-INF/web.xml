@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>UserHandler</servlet-name>
+        <servlet-class>handler.UserHandler</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CalculatorServletTest</servlet-name>
+        <servlet-class>handler.CalculatorServletTest</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>handler.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CalculatorServletTest</servlet-name>
+        <url-pattern>/CalculatorServletTest</url-pattern>
+    </servlet-mapping>   
+    <servlet-mapping>
+        <servlet-name>UserHandler</servlet-name>
+        <url-pattern>/UserHandler</url-pattern>
+    </servlet-mapping> 
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
